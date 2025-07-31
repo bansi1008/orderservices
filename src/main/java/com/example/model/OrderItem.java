@@ -1,7 +1,6 @@
 package com.example.model;
 import java.util.List;
-
-
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,11 +23,13 @@ public class OrderItem {
     private Long productId;
 
     private Integer quantity;
-
-    private Double unitPrice;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id")
+   
+     @ManyToOne
+    @JoinColumn(name = "order_id") 
     private Order order;
+    
+    private BigDecimal  unitPrice;
+
+  
 
 }
