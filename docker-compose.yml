@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  product-catalog-service:
+    build: .
+    container_name: order-services
+    ports:
+      - "8085:8085"
+    env_file:
+      - .env
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
